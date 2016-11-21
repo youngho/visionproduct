@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace= "userControlMapper" >
+
+    <!--에디션 관련 쿼리-->
+    <select id ="selectEdition" parameterType="Map" resultType="com.bizmerce.product.service.EditionVo" >
+        select * FROM
+        BIZ_EDITION
+    </select>
+
+    <insert id ="insertUpdateEdition" parameterType="Map" >
+        INSERT INTO BIZ_EDITION
+        VALUES (#{seq}, #{name}, #{svr_id})
+        ON DUPLICATE KEY UPDATE `name`=#{name}, svr_id=#{svr_id}
+    </insert>
+
+    <delete id="deleteEdition" parameterType="Map">
+        DELETE FROM BIZ_EDITION
+        WHERE seq = #{seq}
+    </delete>
+
+    <!--기능목록 관련 쿼리-->
+    <select id ="selectFunction" parameterType="Map" resultType="com.bizmerce.product.service.FunctionVo" >
+        select * FROM
+        BIZ_FUNCTION
+    </select>
+
+    <insert id ="insertUpdateFunction" parameterType="Map" >
+        INSERT INTO BIZ_FUNCTION
+            (ID, `NAME`
+              <if test="_parameter.containsValue(depth)">, DEPTH</if>
+              <if test="_parameter.containsValue(level)">, `LEVEL`</if>
+              <if test="_parameter.containsValue(mnu_pos)">, MNU_POS</if>
+              <if test="_parameter.containsValue(func_desc)">, FUNC_DESC</if>
+              )
+        VALUES (#{id}, #{name}
+                <if test="_parameter.containsValue(depth)">, #{depth}</if>
+                <if test="_parameter.containsValue(level)">, #{level}</if>
+                <if test="_parameter.containsValue(mnu_pos)">, #{mnu_pos}</if>
+                <if test="_parameter.containsValue(func_desc)">, #{func_desc}</if>
+              )
+        ON DUPLICATE KEY UPDATE
+                `name`=#{name}
+                <if test="_parameter.containsValue(depth)">, DEPTH=#{depth}</if>
+                <if test="_parameter.containsValue(level)">, `LEVEL`=#{level}</if>
+                <if test="_parameter.containsValue(mnu_pos)">, MNU_POS=#{mnu_pos}</if>
+                <if test="_parameter.containsValue(func_desc)">, FUNC_DESC=#{func_desc}</if>
+    </insert>
+
+    <delete id="deleteFunction" parameterType="Map">
+        DELETE FROM BIZ_FUNCTION
+        WHERE id = #{id}
+    </delete>
+
+</mapper>
