@@ -5,28 +5,28 @@
     <!--에디션 관련 쿼리-->
     <select id ="selectEdition" parameterType="Map" resultType="com.visionit.product.service.EditionVo" >
         select * FROM
-        BIZ_EDITION
+        VISIONIT_EDITION
     </select>
 
     <insert id ="insertUpdateEdition" parameterType="Map" >
-        INSERT INTO BIZ_EDITION
+        INSERT INTO VISIONIT_EDITION
         VALUES (#{seq}, #{name}, #{svr_id})
         ON DUPLICATE KEY UPDATE `name`=#{name}, svr_id=#{svr_id}
     </insert>
 
     <delete id="deleteEdition" parameterType="Map">
-        DELETE FROM BIZ_EDITION
+        DELETE FROM VISIONIT_EDITION
         WHERE seq = #{seq}
     </delete>
 
     <!--기능목록 관련 쿼리-->
     <select id ="selectFunction" parameterType="Map" resultType="com.visionit.product.service.FunctionVo" >
         select * FROM
-        BIZ_FUNCTION
+        VISIONIT_FUNCTION
     </select>
 
     <insert id ="insertUpdateFunction" parameterType="Map" >
-        INSERT INTO BIZ_FUNCTION
+        INSERT INTO VISIONIT_FUNCTION
             (ID, `NAME`
               <if test="_parameter.containsValue(depth)">, DEPTH</if>
               <if test="_parameter.containsValue(level)">, `LEVEL`</if>
@@ -48,7 +48,7 @@
     </insert>
 
     <delete id="deleteFunction" parameterType="Map">
-        DELETE FROM BIZ_FUNCTION
+        DELETE FROM VISIONIT_FUNCTION
         WHERE id = #{id}
     </delete>
 
