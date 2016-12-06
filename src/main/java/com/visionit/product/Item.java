@@ -1,4 +1,4 @@
-package com.bizmerce.product;
+package com.visionit.product;
 
 import java.io.Serializable;
 

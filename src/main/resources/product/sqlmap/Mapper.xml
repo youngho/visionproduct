@@ -3,7 +3,7 @@
 <mapper namespace= "userControlMapper" >
 
     <!--에디션 관련 쿼리-->
-    <select id ="selectEdition" parameterType="Map" resultType="com.bizmerce.product.service.EditionVo" >
+    <select id ="selectEdition" parameterType="Map" resultType="com.visionit.product.service.EditionVo" >
         select * FROM
         BIZ_EDITION
     </select>
@@ -20,7 +20,7 @@
     </delete>
 
     <!--기능목록 관련 쿼리-->
-    <select id ="selectFunction" parameterType="Map" resultType="com.bizmerce.product.service.FunctionVo" >
+    <select id ="selectFunction" parameterType="Map" resultType="com.visionit.product.service.FunctionVo" >
         select * FROM
         BIZ_FUNCTION
     </select>

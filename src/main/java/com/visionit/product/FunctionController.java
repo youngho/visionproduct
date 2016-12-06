@@ -1,7 +1,10 @@
-package com.bizmerce.product;
+package com.visionit.product;
 
-import com.bizmerce.product.service.EditionVo;
-import com.bizmerce.product.service.FunctionVo;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
+import com.visionit.product.service.FunctionVo;
 
 
 /**
@@ -37,12 +38,12 @@ public class FunctionController {
 
 		List<FunctionVo> resultSet = sqlSession.selectList("userControlMapper.selectFunction", null);
 		model.addAttribute("functionList", resultSet);
-
+		logger.debug(resultSet.toString());
 		return "function";
 	}
 
 	@RequestMapping(value = "/insertUpdateFunction", method = RequestMethod.POST)
-	public ModelAndView insertUpdateFunction(@RequestParam HashMap param, Model model) {
+	public ModelAndView insertUpdateFunction(@RequestParam HashMap<String, String> param, Model model) {
 
 		sqlSession.insert("userControlMapper.insertUpdateFunction", param);
 
@@ -50,7 +51,7 @@ public class FunctionController {
 	}
 
 	@RequestMapping(value = "/deleteFunction", method = RequestMethod.GET)
-	public ModelAndView deleteFunction(@RequestParam HashMap param, Model model) {
+	public ModelAndView deleteFunction(@RequestParam HashMap<String, String> param, Model model) {
 
 		sqlSession.delete("userControlMapper.deleteFunction", param);
 

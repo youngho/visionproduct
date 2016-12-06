@@ -2,6 +2,7 @@
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page contentType="text/html;charset=utf-8"%>
 
 <%@page session="true" import="java.util.*"%>
@@ -117,11 +118,13 @@
 			</form:form>
 			<table  class="lavalamp">
 				<thead>
-					<td>ID</td>
-					<td>Name</td>
-					<td>SVC ID</td>
-					<td></td>
-					<td></td>
+					<tr>
+						<td>ID</td>
+						<td>Name</td>
+						<td>SVC ID</td>
+						<td></td>
+						<td></td>
+					</tr>
 				</thead>
 				<tbody>
 					<c:forEach var="edition" items="${editionList}">

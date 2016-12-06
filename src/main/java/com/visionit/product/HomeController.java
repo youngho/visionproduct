@@ -1,6 +1,5 @@
-package com.bizmerce.product;
+package com.visionit.product;
 
-import com.bizmerce.product.service.FunctionVo;
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.visionit.product.service.FunctionVo;
 
 import javax.annotation.Resource;
 import java.text.DateFormat;
@@ -56,17 +57,17 @@ public class HomeController {
 //	@RequestMapping(value = "/cal1", method = RequestMethod.GET)
 //	public ModelAndView home2(Locale locale, ModelMap model) {
 //		logger.info("Welcome home! The client locale is {}.", locale);
-//		// ë©”ì‹œì§€ ëª¨ë¸ì— ì¶”ê°€.
-//		String sMessage = "ìŠ¤í”„ë§+ì•„ì´ë°”í‹°ìŠ¤ ì²«ë§Œë‚¨. I Love Spring Framework!";
+//		// ë©”ì‹œì§? ëª¨ë¸?— ì¶”ê?.
+//		String sMessage = "?Š¤?”„ë§?+?•„?´ë°”í‹°?Š¤ ì²«ë§Œ?‚¨. I Love Spring Framework!";
 //		model.addAttribute("sMessage", sMessage);
 //
-//		// ë‚ ì§œ ë¶€ë¶„ ì¶œë ¥ ë° ëª¨ë¸ì— ì¶”ê°€
+//		// ?‚ ì§? ë¶?ë¶? ì¶œë ¥ ë°? ëª¨ë¸?— ì¶”ê?
 //		Date date = new Date();
 //		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 //		String formattedDate = dateFormat.format(date);
 //		model.addAttribute("serverTime", formattedDate);
 //
-//		// mybatisë¥¼ í™œìš© dbì¡°íšŒ ëª¨ë¸ì— ì¶”ê°€
+//		// mybatisë¥? ?™œ?š© dbì¡°íšŒ ëª¨ë¸?— ì¶”ê?
 //		HashMap<String, String> executeQuery = new HashMap<String, String>();
 //		executeQuery.put("name", "shin");
 //		List<HashMap<String, String>> resultSet = sqlSession.selectList("userControlMapper.selectMoneyOneMonth", executeQuery);
@@ -75,7 +76,7 @@ public class HomeController {
 //		System.out.print(model.toString());
 //		ModelAndView mav = new ModelAndView("mon");
 //
-//		// viewì— ëª¨ë¸ ë„˜ê²¨ ë„˜ê²¨
+//		// view?— ëª¨ë¸ ?„˜ê²? ?„˜ê²?
 //		mav.addAllObjects(model);
 //
 //		// ModelAndView mav = new ModelAndView("home", "model", model);
@@ -105,17 +106,17 @@ public class HomeController {
 	@RequestMapping(value = "/cal", method = RequestMethod.GET)
 	public ModelAndView carendar(Locale locale, ModelMap model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		// ë©”ì‹œì§€ ëª¨ë¸ì— ì¶”ê°€.
-		String sMessage = "ìŠ¤í”„ë§+ì•„ì´ë°”í‹°ìŠ¤ ì²«ë§Œë‚¨. I Love Spring Framework!";
+		// ë©”ì‹œì§? ëª¨ë¸?— ì¶”ê?.
+		String sMessage = "?Š¤?”„ë§?+?•„?´ë°”í‹°?Š¤ ì²«ë§Œ?‚¨. I Love Spring Framework!";
 		model.addAttribute("sMessage", sMessage);
 
-		// ë‚ ì§œ ë¶€ë¶„ ì¶œë ¥ ë° ëª¨ë¸ì— ì¶”ê°€
+		// ?‚ ì§? ë¶?ë¶? ì¶œë ¥ ë°? ëª¨ë¸?— ì¶”ê?
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		String formattedDate = dateFormat.format(date);
 		model.addAttribute("serverTime", formattedDate);
 
-		// mybatisë¥¼ í™œìš© dbì¡°íšŒ ëª¨ë¸ì— ì¶”ê°€
+		// mybatisë¥? ?™œ?š© dbì¡°íšŒ ëª¨ë¸?— ì¶”ê?
 		HashMap<String, String> executeQuery = new HashMap<String, String>();
 		executeQuery.put("name", "shin");
 
@@ -124,7 +125,7 @@ public class HomeController {
 
 		ModelAndView mav = new ModelAndView("retrieveEdition");
 
-		// viewì— ëª¨ë¸ ë„˜ê²¨ ë„˜ê²¨
+		// view?— ëª¨ë¸ ?„˜ê²? ?„˜ê²?
 		mav.addAllObjects(model);
 
 		// ModelAndView mav = new ModelAndView("home", "model", model);

@@ -1,4 +1,4 @@
-package com.bizmerce.product.service;
+package com.visionit.product.service;
 
 /**
  * Created by yhkim on 2016. 9. 28..

@@ -1,26 +1,22 @@
-package com.bizmerce.product;
+package com.visionit.product;
 
-import com.bizmerce.product.service.EditionVo;
-import com.bizmerce.product.service.FunctionVo;
+import java.util.HashMap;
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.annotation.Resource;
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
+import com.visionit.product.service.EditionVo;
 
 
 /**
@@ -43,11 +39,12 @@ public class EditionController {
 		List<EditionVo> resultSet = sqlSession.selectList("userControlMapper.selectEdition", null);
 		model.addAttribute("editionList", resultSet);
 
+		logger.debug(resultSet.toString());
 		return "edition";
 	}
 
 	@RequestMapping(value = "/insertUpdateEdition", method = RequestMethod.POST)
-	public ModelAndView insertUpdateEdition(@RequestParam HashMap param, Model model) {
+	public ModelAndView insertUpdateEdition(@RequestParam HashMap<String, String> param, Model model) {
 
 		sqlSession.insert("userControlMapper.insertUpdateEdition", param);
 
@@ -55,7 +52,7 @@ public class EditionController {
 	}
 
 	@RequestMapping(value = "/deleteEdition", method = RequestMethod.GET)
-	public ModelAndView deleteEdition(@RequestParam HashMap param, Model model) {
+	public ModelAndView deleteEdition(@RequestParam HashMap<String, String> param, Model model) {
 
 		sqlSession.delete("userControlMapper.deleteEdition", param);
 

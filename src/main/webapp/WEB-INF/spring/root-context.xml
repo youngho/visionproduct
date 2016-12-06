@@ -4,16 +4,9 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
 		<property name="driver" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://10.10.1.124:3306/wiseproduct"></property>
+		<property name="url" value="jdbc:mysql://112.216.128.142:3306/redmine"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="12#bizmerce"></property>
-	</bean>
-
-	<bean id="dataSource2" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
-		<property name="driver" value="com.mysql.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://10.10.1.124:3306/db_redmine"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="12#bizmerce"></property>
+		<property name="password" value="chosh@002"></property>
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
