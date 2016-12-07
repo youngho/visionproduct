@@ -1,0 +1,14 @@
+CREATE TABLE `visionit_edition` (
+  `SEQ` int(11) NOT NULL AUTO_INCREMENT,
+  `SVR_ID` int(11) DEFAULT NULL,
+  `NAME` int(11) DEFAULT NULL,
+  PRIMARY KEY (`SEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='에디션';
+
+CREATE TABLE `visionit_function` (
+  `ID` int(11) NOT NULL,
+  `DEPTH` int(11) DEFAULT NULL,
+  `LEVEL` int(11) DEFAULT NULL,
+  `MNU_POS` varchar(50) DEFAULT NULL,
+  `FUNC_DESC` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='기능관리';
